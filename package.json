@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "global-energia",
+  "version": "1.0.0",
+  "workspaces": [
+    "workspaces/**"
+  ],
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {
+    "tailwindcss": "^4.0.15"
+  }
+}
