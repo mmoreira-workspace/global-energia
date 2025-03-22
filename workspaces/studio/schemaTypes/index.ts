@@ -5,7 +5,6 @@ import projetos from "./projetos";
 import faq from "./faq";
 import page from "./page";
 import projectPage from "./projectPage";
-import perguntaResposta from "./perguntaResposta";
 
 export const schemaTypes = [
     homePage,
@@ -14,6 +13,5 @@ export const schemaTypes = [
     projetos,
     faq,
     page,
-    projectPage,
-    perguntaResposta
+    projectPage
 ]

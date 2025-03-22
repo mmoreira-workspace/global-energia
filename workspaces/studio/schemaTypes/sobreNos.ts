@@ -6,13 +6,13 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-            name: 'tituloSobreNos',
+            name: 'title',
             title: 'Título Sobre Nós',
             type: 'string',
             description: 'Ex: Sobre Nós',
         }),
         defineField({
-            name: 'imagemSobreNos',
+            name: 'image',
             title: 'Imagem Sobre Nós',
             type: 'image',
             options: {
@@ -20,7 +20,7 @@ export default defineType({
             },
         }),
         defineField({
-            name: 'descricaoSobreNos',
+            name: 'description',
             title: 'Descricao Sobre Nós',
             type: 'string',
         }),

@@ -6,15 +6,14 @@ export default ({
     type: 'document',
     fields: [
         defineField({
-            name: 'tituloFaq',
-            title: 'Título Pergunta Frequentes',
+            name: 'question',
+            title: 'Pergunta',
             type: 'string',
         }),
         defineField({
-            name: 'faq',
-            title: 'Perguntas Frequentes',
-            type: 'array',
-            of: [{ type: 'perguntaResposta'}],
+            name: 'answer',
+            title: 'Respostas',
+            type: 'text'
         }),
     ],
 });

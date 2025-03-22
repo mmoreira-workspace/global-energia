@@ -6,29 +6,24 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-            name: 'imagemProjeto',
-            title: 'Imagem do Projeto',
-            type: 'image',
+            name: 'title',
+            title: 'Project Title',
+            type: 'string'
         }),
         defineField({
-            name: 'imagemProjeto2',
-            title: 'Imagem do Projeto 2',
-            type: 'image',
+            name: 'description',
+            title: 'Project Description',
+            type: 'text'
         }),
         defineField({
-            name: 'textoBotao',
-            title: 'Texto do Botão',
-            type: 'string',
-            description: 'Ex: Veja todos nossos projetos',
-            validation: Rule => Rule.required(),
+            name: 'image1',
+            title: 'Imagem 1',
+            type: 'image'
         }),
         defineField({
-            name: 'linkInterno',
-            title: 'Link Interno',
-            type: 'reference',
-            to: [{ type: 'page' }],
-            description: 'Selecione a página interna para onde o botão deve redirecionar',
-            // validation: Rule => Rule.required(),
-        }),
+            name: 'image2',
+            title: 'Imagem 2',
+            type: 'image'
+        })
     ],
 });
