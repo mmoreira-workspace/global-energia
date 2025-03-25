@@ -58,10 +58,10 @@ export default function HomePage({ data }: PageProps<IHopePageProps>) {
         <>
             <main>
                 {/* Main Teaser Home */}
-                <section>
-                    <img src={teaser.teaserBackground.asset.url} alt="Teaser Background" />
-                    <div>
-                        <h1>
+                <section className="relative bg-red-500">
+                    <img src={teaser.teaserBackground.asset.url} alt="Teaser Background" className='absolute w-full h-full object-cover'/>
+                    <div className="relative z-10">
+                        <h1 className="text-4xl font-bold">
                             {teaser.homeTitle}
                         </h1>
                         <img src={teaser.logo.asset.url} alt="Logo"/>
