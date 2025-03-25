@@ -25,8 +25,10 @@ export interface IHopePageProps {
                     url: string;
                 };
             };
-            orcamentoBotao: string;
-            urlBotao: string;
+            buttons: {
+                buttonText: string;
+                buttonUrl: string;
+            }[];
         };
         sobreNos: {
             _id: string;
@@ -40,8 +42,11 @@ export interface IHopePageProps {
         };
         faq: {
             _id: string;
-            question: string;
-            answer: string;
+            title: string;
+            listOfFaq: {
+                question: string;
+                answer: string;
+            }[];
         };
     };
 }
@@ -52,21 +57,51 @@ export default function HomePage({ data }: PageProps<IHopePageProps>) {
     return (
         <>
             <main>
+                {/* Main Teaser Home */}
                 <section>
                     <img src={teaser.teaserBackground.asset.url} alt="Teaser Background" />
                     <div>
                         <h1>
                             {teaser.homeTitle}
                         </h1>
-                        <img src={teaser.logo.asset.url} alt="Logo" />
+                        <img src={teaser.logo.asset.url} alt="Logo"/>
                     </div>
                     <div>
-                        <p>{teaser.orcamentoBotao}</p>
-                        <a href={teaser.urlBotao}></a>
+                        {teaser.buttons.map((button, index) => (
+                            <div key={index}>
+                                <a href={button.buttonUrl}>{button.buttonText}</a>
+                            </div>
+                        ))}
                     </div>
+                </section>
+
+                {/* About Us */}
+                <section>
+                    <div>
+                        <h2>{sobreNos.title}</h2>
+                        <p>{sobreNos.description}</p>
+                    </div>
+                </section>
+
+                {/* Projects Section */}
+                <section>
+                    <div>
+                        <h2>{projetos.title}</h2>
+                        <p>{projetos.description}</p>
+                    </div>
+                </section>
+
+                {/* FAQ */}
+                <section>
+                    <h2>{faq.title}</h2>
+                    {faq.listOfFaq.map((item, index) => (
+                        <div key={index}>
+                            <h3>{item.question}</h3>
+                            <p>{item.answer}</p>
+                        </div>
+                    ))}
                 </section>
             </main>
         </>
-
     )
 }

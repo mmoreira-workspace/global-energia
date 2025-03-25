@@ -31,13 +31,14 @@ export default defineType({
             validation: Rule => Rule.required(),
         }),
         defineField({
-            name: 'urlBotao',
-            title: 'URL do Botao',
-            type: 'url',
-            description: 'Link whats',
-            validation: Rule => Rule.required().uri({
-                scheme: ['http', 'https', 'mailto', 'tel'],
-            }),
+            name: 'buttons',
+            title: 'Botoes',
+            type: 'array',
+            of: [
+                {
+                    type: 'buttons',
+                },
+            ],
         }),
     ],
 });

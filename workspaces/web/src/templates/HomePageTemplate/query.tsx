@@ -17,8 +17,10 @@ export const query = graphql`
                     url
                 }
             }
-            orcamentoBotao
-            urlBotao
+            buttons {
+                buttonText
+                buttonUrl
+            }
         }
         sobreNos {
             _id
@@ -32,8 +34,11 @@ export const query = graphql`
         }
         faq {
             _id
-            question
-            answer
+            title
+            listOfFaq {
+                question
+                answer
+            }
         }
         # image {
         #     asset {
