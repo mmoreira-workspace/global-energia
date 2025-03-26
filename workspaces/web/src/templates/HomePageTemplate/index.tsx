@@ -1,5 +1,6 @@
 import { graphql, PageProps } from "gatsby";
 import React from "react";
+import "./index.scss";
 
 export const data = graphql`
     query($_id: String) {
@@ -58,46 +59,46 @@ export default function HomePage({ data }: PageProps<IHopePageProps>) {
         <>
             <main>
                 {/* Main Teaser Home */}
-                <section className="relative bg-red-500">
-                    <img src={teaser.teaserBackground.asset.url} alt="Teaser Background" className='absolute w-full h-full object-cover'/>
-                    <div className="relative z-10">
-                        <h1 className="text-4xl font-bold">
+                <section className="container home-teaser">
+                    <img src={teaser.teaserBackground.asset.url} alt="Teaser Background" className="image home-teaser-image-bg"/>
+                    <div className="container container-text">
+                        <h1 className="text simple-h1">
                             {teaser.homeTitle}
                         </h1>
-                        <img src={teaser.logo.asset.url} alt="Logo"/>
+                        <img src={teaser.logo.asset.url} alt="Logo" className="image home-teaser-logo"/>
                     </div>
-                    <div>
+                    <div className="container container-box">
                         {teaser.buttons.map((button, index) => (
-                            <div key={index}>
-                                <a href={button.buttonUrl}>{button.buttonText}</a>
+                            <div key={index} className="button">
+                                <a href={button.buttonUrl} className="button-link">{button.buttonText}</a>
                             </div>
                         ))}
                     </div>
                 </section>
 
                 {/* About Us */}
-                <section>
-                    <div>
-                        <h2>{sobreNos.title}</h2>
-                        <p>{sobreNos.description}</p>
+                <section className="container">
+                    <div className="container">
+                        <h2 className="text simple-h2">{sobreNos.title}</h2>
+                        <p className="text simple-paragraph">{sobreNos.description}</p>
                     </div>
                 </section>
 
                 {/* Projects Section */}
-                <section>
-                    <div>
-                        <h2>{projetos.title}</h2>
-                        <p>{projetos.description}</p>
+                <section className="container">
+                    <div className="container">
+                        <h2 className="text simple-h2">{projetos.title}</h2>
+                        <p className="text simple-paragraph">{projetos.description}</p>
                     </div>
                 </section>
 
                 {/* FAQ */}
-                <section>
-                    <h2>{faq.title}</h2>
+                <section className="container">
+                    <h2 className="text simple-h2">{faq.title}</h2>
                     {faq.listOfFaq.map((item, index) => (
-                        <div key={index}>
-                            <h3>{item.question}</h3>
-                            <p>{item.answer}</p>
+                        <div key={index} className="container">
+                            <h3 className="text simple-h3">{item.question}</h3>
+                            <p className="text simple-paragraph">{item.answer}</p>
                         </div>
                     ))}
                 </section>

@@ -1,0 +1,49 @@
+.container {
+    &.home-teaser {
+        .home-teaser-image-bg {
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+            aspect-ratio: 3 / 2;
+            height: 500px;
+        }
+
+        .container-text {
+            width: 64%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+
+            .simple-h1 {
+                color: #FFF;
+                text-align: center;
+                font-family: "Roboto Condensed";
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            .image {
+                width: 100%;
+            }
+        }
+
+        .container-box {
+            width: 64%;
+            background-color: #FFF;
+            height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            border-radius: 31px;
+            gap: 20px;
+        }
+    }
+}
+
+.text {}
+
+.button {}
