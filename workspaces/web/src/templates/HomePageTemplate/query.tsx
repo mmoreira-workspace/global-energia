@@ -31,6 +31,20 @@ export const query = graphql`
             _id
             title
             description
+            image1 {
+                asset {
+                    url
+                }
+            }
+            image2 {
+                asset {
+                    url
+                }
+            }
+            buttons {
+                buttonText
+                buttonUrl
+            }
         }
         faq {
             _id

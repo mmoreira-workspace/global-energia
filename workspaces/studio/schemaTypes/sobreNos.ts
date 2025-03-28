@@ -22,7 +22,7 @@ export default defineType({
         defineField({
             name: 'description',
             title: 'Descricao Sobre Nós',
-            type: 'string',
-        }),
+            type: 'text',
+        })
     ],
 });

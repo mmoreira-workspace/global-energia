@@ -13,7 +13,19 @@ const config: GatsbyConfig = {
     resolve: 'gatsby-source-sanity',
     options: {
       "projectId": "j87m344w",
-      "dataset": "production"
+      "dataset": "production",
+      enableListener: true,
+      preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+      web: [
+        {
+          name: `Inter`,
+          file: `https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap`,
+        },
+        {
+          name: `Roboto Condensed`,
+          file: `https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap`,
+        },
+      ],
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-postcss", `gatsby-plugin-sass`]
 };
