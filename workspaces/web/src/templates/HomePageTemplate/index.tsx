@@ -75,8 +75,36 @@ export default function HomePage({ data }: PageProps<IHopePageProps>) {
         setOpenFaqIndex(openFaqIndex === index ? null : index);
     };
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <>
+            <header>
+                <div className="header-container">
+                    <img src={teaser.logo.asset.url} alt="Logo" className="header-logo" />
+                    <nav className="header-nav">
+                        <button
+                            className="hamburger-button"
+                            aria-label="Toggle Menu"
+                            onClick={toggleMenu}
+                        >
+                        </button>
+                        <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+                            {teaser.buttons.map((button, index) => (
+                                <li key={index} className="nav-item">
+                                    <a href={button.buttonUrl} className="nav-link">
+                                        {button.buttonText}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+            </header>
             <main>
                 {/* Main Teaser Home */}
                 <section className="container home-teaser">
@@ -159,6 +187,27 @@ export default function HomePage({ data }: PageProps<IHopePageProps>) {
                     ))}
                 </section>
             </main>
+            <footer>
+                <div className="footer-container">
+                    <div className="footer-section">
+                        <img src={teaser.logo.asset.url} alt="Footer Logo" className="footer-logo" />
+                        {/* <div className="footer-text">
+                            <p>© 2023 Global Energia. Todos os direitos reservados.</p>
+                        </div> */}
+                    </div>
+                    {/* <div className="footer-section-2">
+                        <p>Siga-nos nas redes sociais:</p>
+                        <div className="footer-social-icons">
+                            <img src="/path/to/icon1.png" alt="Social Icon 1" className="social-icon" />
+                            <img src="/path/to/icon2.png" alt="Social Icon 2" className="social-icon" />
+                            <img src="/path/to/icon3.png" alt="Social Icon 3" className="social-icon" />
+                        </div>
+                    </div> */}
+                    <div className="footer-section-3">
+                        <p>Todos os direitos reservados Global Energia LTDA 2025</p>
+                    </div>
+                </div>
+            </footer>
         </>
     )
 }
