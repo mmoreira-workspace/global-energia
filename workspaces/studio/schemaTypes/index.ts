@@ -7,6 +7,8 @@ import page from "./page";
 import projectPage from "./projectPage";
 import buttons from "./buttons";
 import answersAndQuestions from "./answersAndQuestions";
+import siteSettings from "./siteSettings";
+import headerButton from "./headerButton";
 
 export const schemaTypes = [
     homePage,
@@ -17,5 +19,7 @@ export const schemaTypes = [
     page,
     projectPage,
     buttons,
-    answersAndQuestions
+    answersAndQuestions,
+    siteSettings,
+    headerButton
 ]

@@ -20,9 +20,7 @@ export default ({
             name: 'buttonUrl',
             title: 'Pagina Externa (link)',
             type: 'url',
-            validation: Rule => Rule.required().uri({
-                scheme: ['http', 'https', 'mailto', 'tel'],
-            }),
+
         }),
     ],
     // preview: {

@@ -17,8 +17,8 @@ export const ProjectPageQuery = graphql`
   }
 
   query AllProjects {
-    allSanityProjectPage {
-        nodes {
+    allSanityProjectPage(sort: { date: DESC }) {
+      nodes {
         ...ProjectCardFields
       }
     }
