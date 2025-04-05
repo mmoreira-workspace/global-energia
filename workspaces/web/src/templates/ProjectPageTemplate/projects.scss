@@ -1,0 +1,78 @@
+@import "./../../styles/global.scss";
+
+.container.project-page {
+  background-color: #F0F0F0;
+  padding: 40px 16px;
+
+  @include media-tablet {
+    padding: 60px 32px;
+  }
+
+  h1.simple-h1 {
+    text-align: center;
+    color: #0B599B;
+    font-family: "Roboto Condensed";
+    font-size: 32px;
+
+    @include media-tablet {
+      font-size: 42px;
+    }
+  }
+
+  .project-grid {
+    margin-top: 40px;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+
+      @include media-tablet {
+        height: 220px;
+      }
+    }
+
+    .project-info {
+      padding: 20px;
+
+      h2.simple-h2 {
+        color: #0B599B;
+        font-size: 20px;
+        font-family: "Roboto Condensed";
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 16px;
+        font-family: "Roboto Condensed";
+        color: #333;
+        margin-bottom: 8px;
+
+        &.location,
+        &.category {
+          color: #777;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
